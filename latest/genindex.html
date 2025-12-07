@@ -6,8 +6,8 @@
       <link rel="canonical" href="ape-safe/genindex.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=add26080" />
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=14737038" />
     <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
       <img class="dark-logo" src="_static/logo_green.svg" alt="ape-safe" height="28" loading="lazy" />
       <strong>ape-safe</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
@@ -39,11 +39,11 @@ data-aria-auto="Switch to light color mode"
 data-aria-light="Switch to dark color mode"
 data-aria-dark="Switch to auto color mode">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -58,10 +58,14 @@ data-aria-dark="Switch to auto color mode">
 <div class="genindex-jumpbox">
  <a href="#Symbols"><strong>Symbols</strong></a>
  | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
@@ -84,6 +88,10 @@ data-aria-dark="Switch to auto color mode">
         <li><a href="commands/delegates.html#cmdoption-ape-safe-delegates-add-account">ape-safe-delegates-add command line option</a>
 </li>
         <li><a href="commands/delegates.html#cmdoption-ape-safe-delegates-remove-account">ape-safe-delegates-remove command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-account">ape-safe-modules-disable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-account">ape-safe-modules-enable command line option</a>
 </li>
       </ul></li>
       <li>
@@ -135,6 +143,15 @@ data-aria-dark="Switch to auto color mode">
 </li>
       </ul></li>
       <li>
+    --propose
+
+      <ul>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-propose">ape-safe-modules-disable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-propose">ape-safe-modules-enable command line option</a>
+</li>
+      </ul></li>
+      <li>
     --safe
 
       <ul>
@@ -143,6 +160,8 @@ data-aria-dark="Switch to auto color mode">
         <li><a href="commands/delegates.html#cmdoption-ape-safe-delegates-remove-safe">ape-safe-delegates-remove command line option</a>
 </li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-approve-safe">ape-safe-pending-approve command line option</a>
+</li>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-safe">ape-safe-pending-ensure command line option</a>
 </li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-execute-safe">ape-safe-pending-execute command line option</a>
 </li>
@@ -166,6 +185,8 @@ data-aria-dark="Switch to auto color mode">
     --submitter
 
       <ul>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-submitter">ape-safe-pending-ensure command line option</a>
+</li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-execute-submitter">ape-safe-pending-execute command line option</a>
 </li>
       </ul></li>
@@ -210,7 +231,13 @@ data-aria-dark="Switch to auto color mode">
 </li>
         <li><a href="commands/mgmt.html#cmdoption-ape-safe-list-v">ape-safe-list command line option</a>
 </li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-v">ape-safe-modules-disable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-v">ape-safe-modules-enable command line option</a>
+</li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-approve-v">ape-safe-pending-approve command line option</a>
+</li>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-v">ape-safe-pending-ensure command line option</a>
 </li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-execute-v">ape-safe-pending-execute command line option</a>
 </li>
@@ -248,7 +275,13 @@ data-aria-dark="Switch to auto color mode">
 </li>
         <li><a href="commands/mgmt.html#cmdoption-ape-safe-list-v">ape-safe-list command line option</a>
 </li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-v">ape-safe-modules-disable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-v">ape-safe-modules-enable command line option</a>
+</li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-approve-v">ape-safe-pending-approve command line option</a>
+</li>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-v">ape-safe-pending-ensure command line option</a>
 </li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-execute-v">ape-safe-pending-execute command line option</a>
 </li>
@@ -286,6 +319,12 @@ data-aria-dark="Switch to auto color mode">
       <li><a href="methoddocs/accounts.html#ape_safe.accounts.SafeContainer.accounts">accounts (ape_safe.accounts.SafeContainer property)</a>
 </li>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.ActionNotPerformedError">ActionNotPerformedError</a>
+</li>
+      <li><a href="methoddocs/multisend.html#ape_safe.multisend.MultiSend.add">add() (ape_safe.multisend.MultiSend method)</a>
+</li>
+      <li><a href="methoddocs/multisend.html#ape_safe.multisend.MultiSend.add_from_calldata">add_from_calldata() (ape_safe.multisend.MultiSend method)</a>
+</li>
+      <li><a href="methoddocs/multisend.html#ape_safe.multisend.MultiSend.add_from_receipt">add_from_receipt() (ape_safe.multisend.MultiSend method)</a>
 </li>
       <li>
     ADDRESS
@@ -394,6 +433,54 @@ data-aria-dark="Switch to auto color mode">
 </li>
       </ul></li>
       <li>
+    ape-safe-modules-disable command line option
+
+      <ul>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-account">--account</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-propose">--propose</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-v">--verbosity</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-v">-v</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-arg-MODULE">MODULE</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-arg-SAFE">SAFE</a>
+</li>
+      </ul></li>
+      <li>
+    ape-safe-modules-enable command line option
+
+      <ul>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-account">--account</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-propose">--propose</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-v">--verbosity</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-v">-v</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-arg-MODULE">MODULE</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-arg-SAFE">SAFE</a>
+</li>
+      </ul></li>
+      <li>
+    ape-safe-modules-guard command line option
+
+      <ul>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-guard-arg-SAFE">SAFE</a>
+</li>
+      </ul></li>
+      <li>
+    ape-safe-modules-list command line option
+
+      <ul>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-list-arg-SAFE">SAFE</a>
+</li>
+      </ul></li>
+      <li>
     ape-safe-pending-approve command line option
 
       <ul>
@@ -406,6 +493,21 @@ data-aria-dark="Switch to auto color mode">
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-approve-v">-v</a>
 </li>
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-approve-arg-NONCE_OR_SAFE_TX_HASH-s">NONCE_OR_SAFE_TX_HASH(s)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    ape-safe-pending-ensure command line option
+
+      <ul>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-safe">--safe</a>
+</li>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-submitter">--submitter</a>
+</li>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-v">--verbosity</a>
+</li>
+        <li><a href="commands/pending.html#cmdoption-ape-safe-pending-ensure-v">-v</a>
 </li>
       </ul></li>
       <li>
@@ -425,8 +527,6 @@ data-aria-dark="Switch to auto color mode">
         <li><a href="commands/pending.html#cmdoption-ape-safe-pending-execute-arg-NONCE_OR_SAFE_TX_HASH-s">NONCE_OR_SAFE_TX_HASH(s)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ape-safe-pending-list command line option
 
@@ -516,6 +616,13 @@ data-aria-dark="Switch to auto color mode">
 </li>
       </ul></li>
       <li>
+    ape_safe.cli
+
+      <ul>
+        <li><a href="methoddocs/cli.html#module-ape_safe.cli">module</a>
+</li>
+      </ul></li>
+      <li>
     ape_safe.client
 
       <ul>
@@ -544,6 +651,13 @@ data-aria-dark="Switch to auto color mode">
 </li>
       </ul></li>
       <li>
+    ape_safe.multisend
+
+      <ul>
+        <li><a href="methoddocs/multisend.html#module-ape_safe.multisend">module</a>
+</li>
+      </ul></li>
+      <li>
     ape_safe.packages
 
       <ul>
@@ -560,6 +674,16 @@ data-aria-dark="Switch to auto color mode">
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.ApeSafeError">ApeSafeError</a>
 </li>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.ApeSafeException">ApeSafeException</a>
+</li>
+      <li><a href="methoddocs/multisend.html#ape_safe.multisend.MultiSend.as_transaction">as_transaction() (ape_safe.multisend.MultiSend method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="methoddocs/client.html#ape_safe.client.BaseSafeClient">BaseSafeClient (class in ape_safe.client)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -619,10 +743,34 @@ data-aria-dark="Switch to auto color mode">
   </ul></td>
 </tr></table>
 
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.FeatureNotAvailable">FeatureNotAvailable</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="methoddocs/client.html#ape_safe.client.BaseSafeClient.get_transactions">get_transactions() (ape_safe.client.BaseSafeClient method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.handle_safe_logic_error">handle_safe_logic_error (class in ape_safe.exceptions)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="methoddocs/multisend.html#ape_safe.multisend.MultiSend.inject">inject() (ape_safe.multisend.MultiSend class method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -650,10 +798,21 @@ data-aria-dark="Switch to auto color mode">
       <li><a href="methoddocs/client.html#ape_safe.client.MockSafeClient">MockSafeClient (class in ape_safe.client)</a>
 </li>
       <li>
+    MODULE
+
+      <ul>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-arg-MODULE">ape-safe-modules-disable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-arg-MODULE">ape-safe-modules-enable command line option</a>
+</li>
+      </ul></li>
+      <li>
     module
 
       <ul>
         <li><a href="methoddocs/accounts.html#module-ape_safe.accounts">ape_safe.accounts</a>
+</li>
+        <li><a href="methoddocs/cli.html#module-ape_safe.cli">ape_safe.cli</a>
 </li>
         <li><a href="methoddocs/client.html#module-ape_safe.client">ape_safe.client</a>
 </li>
@@ -663,6 +822,8 @@ data-aria-dark="Switch to auto color mode">
 </li>
         <li><a href="methoddocs/factory.html#module-ape_safe.factory">ape_safe.factory</a>
 </li>
+        <li><a href="methoddocs/multisend.html#module-ape_safe.multisend">ape_safe.multisend</a>
+</li>
         <li><a href="methoddocs/packages.html#module-ape_safe.packages">ape_safe.packages</a>
 </li>
         <li><a href="methoddocs/types.html#module-ape_safe.types">ape_safe.types</a>
@@ -671,6 +832,8 @@ data-aria-dark="Switch to auto color mode">
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.MulticallException">MulticallException</a>
+</li>
+      <li><a href="methoddocs/multisend.html#ape_safe.multisend.MultiSend">MultiSend (class in ape_safe.multisend)</a>
 </li>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.MultisigTransactionNotFoundError">MultisigTransactionNotFoundError</a>
 </li>
@@ -703,6 +866,8 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.NotEnoughSignatures">NotEnoughSignatures</a>
 </li>
+      <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.NoVersionDetected">NoVersionDetected</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -724,6 +889,8 @@ data-aria-dark="Switch to auto color mode">
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="methoddocs/accounts.html#ape_safe.accounts.SafeAccount.propose">propose() (ape_safe.accounts.SafeAccount method)</a>
+</li>
+      <li><a href="methoddocs/cli.html#ape_safe.cli.propose_from_simulation">propose_from_simulation() (in module ape_safe.cli)</a>
 </li>
       <li><a href="methoddocs/accounts.html#ape_safe.accounts.SafeAccount.propose_safe_tx">propose_safe_tx() (ape_safe.accounts.SafeAccount method)</a>
 </li>
@@ -747,6 +914,14 @@ data-aria-dark="Switch to auto color mode">
       <ul>
         <li><a href="commands/delegates.html#cmdoption-ape-safe-delegates-list-arg-SAFE">ape-safe-delegates-list command line option</a>
 </li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-disable-arg-SAFE">ape-safe-modules-disable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-enable-arg-SAFE">ape-safe-modules-enable command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-guard-arg-SAFE">ape-safe-modules-guard command line option</a>
+</li>
+        <li><a href="commands/modules.html#cmdoption-ape-safe-modules-list-arg-SAFE">ape-safe-modules-list command line option</a>
+</li>
         <li><a href="commands/mgmt.html#cmdoption-ape-safe-remove-arg-SAFE">ape-safe-remove command line option</a>
 </li>
       </ul></li>
@@ -758,12 +933,12 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="methoddocs/exceptions.html#ape_safe.exceptions.SafeClientException">SafeClientException</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="methoddocs/config.html#ape_safe.config.SafeConfig">SafeConfig (class in ape_safe.config)</a>
 </li>
       <li><a href="methoddocs/accounts.html#ape_safe.accounts.SafeContainer">SafeContainer (class in ape_safe.accounts)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="methoddocs/client.html#ape_safe.client.SafeDetails">SafeDetails (class in ape_safe.client)</a>
 </li>
       <li><a href="methoddocs/factory.html#ape_safe.factory.SafeFactory">SafeFactory (class in ape_safe.factory)</a>
@@ -846,5 +1021,5 @@ data-aria-dark="Switch to auto color mode">
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script data-domain="docs.apeworx.io" defer="defer" src="https://plausible.io/js/script.js"></script>
-      <script src="_static/shibuya.js?v=1d2088d1"></script></body>
+      <script src="_static/shibuya.js?v=c1cf1a6b"></script></body>
 </html>

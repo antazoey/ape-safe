@@ -6,8 +6,8 @@
       <link rel="canonical" href="ape-safe/" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=add26080" />
+  </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="_static/shibuya.css?v=14737038" />
     <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,9 @@
 }
 </style>
     <meta property="og:type" content="website"/>
-<meta property="og:url" content="ape-safe/"/>
-<meta property="og:title" content="&lt;no title&gt;"/>
-<meta name="twitter:card" content="summary"/>
+  <meta property="og:url" content="ape-safe/"/>
+  <meta property="og:title" content="&lt;no title&gt;"/>
+    <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
   <div class="sy-head-blur"></div>
@@ -31,7 +31,7 @@
       <img class="dark-logo" src="_static/logo_green.svg" alt="ape-safe" height="28" loading="lazy" />
       <strong>ape-safe</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
@@ -43,11 +43,11 @@ data-aria-auto="Switch to light color mode"
 data-aria-light="Switch to dark color mode"
 data-aria-dark="Switch to auto color mode">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -63,18 +63,23 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="userguides/transactions.html">Transaction Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguides/safe_management.html">Safe Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguides/multisend.html">MultiSend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguides/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguides/production.html">Managing your Safe in Production</a></li>
 </ul>
 <p class="caption" role="heading" aria-level="3"><span class="caption-text">CLI Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commands/mgmt.html">Local Safe Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commands/pending.html">Pending Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commands/delegates.html">Managing Delegates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/modules.html">Modules</a></li>
 </ul>
 <p class="caption" role="heading" aria-level="3"><span class="caption-text">Python Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/accounts.html"><code class="docutils literal notranslate"><span class="pre">SafeAccount</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/accounts.html#ape_safe.accounts.SafeContainer"><code class="docutils literal notranslate"><span class="pre">SafeContainer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html"><code class="docutils literal notranslate"><span class="pre">ExecutedTxData</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/cli.html"><code class="docutils literal notranslate"><span class="pre">propose_from_simulation()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html"><code class="docutils literal notranslate"><span class="pre">BaseSafeClient</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.ExecutedTxData"><code class="docutils literal notranslate"><span class="pre">ExecutedTxData</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.MockSafeClient"><code class="docutils literal notranslate"><span class="pre">MockSafeClient</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.OperationType"><code class="docutils literal notranslate"><span class="pre">OperationType</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.SafeClient"><code class="docutils literal notranslate"><span class="pre">SafeClient</span></code></a></li>
@@ -88,9 +93,11 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ApeSafeException"><code class="docutils literal notranslate"><span class="pre">ApeSafeException</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ClientResponseError"><code class="docutils literal notranslate"><span class="pre">ClientResponseError</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ClientUnavailable"><code class="docutils literal notranslate"><span class="pre">ClientUnavailable</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.FeatureNotAvailable"><code class="docutils literal notranslate"><span class="pre">FeatureNotAvailable</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.MulticallException"><code class="docutils literal notranslate"><span class="pre">MulticallException</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.MultisigTransactionNotFoundError"><code class="docutils literal notranslate"><span class="pre">MultisigTransactionNotFoundError</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NoLocalSigners"><code class="docutils literal notranslate"><span class="pre">NoLocalSigners</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NoVersionDetected"><code class="docutils literal notranslate"><span class="pre">NoVersionDetected</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NotASigner"><code class="docutils literal notranslate"><span class="pre">NotASigner</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NotEnoughSignatures"><code class="docutils literal notranslate"><span class="pre">NotEnoughSignatures</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.SafeClientException"><code class="docutils literal notranslate"><span class="pre">SafeClientException</span></code></a></li>
@@ -99,6 +106,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ValueRequired"><code class="docutils literal notranslate"><span class="pre">ValueRequired</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.handle_safe_logic_error"><code class="docutils literal notranslate"><span class="pre">handle_safe_logic_error</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/factory.html"><code class="docutils literal notranslate"><span class="pre">SafeFactory</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/multisend.html"><code class="docutils literal notranslate"><span class="pre">MultiSend</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/packages.html"><code class="docutils literal notranslate"><span class="pre">DeploymentAsset</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/packages.html#ape_safe.packages.DeploymentInfo"><code class="docutils literal notranslate"><span class="pre">DeploymentInfo</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/packages.html#ape_safe.packages.DeploymentType"><code class="docutils literal notranslate"><span class="pre">DeploymentType</span></code></a></li>
@@ -151,6 +159,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="userguides/transactions.html">Transaction Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguides/safe_management.html">Safe Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguides/multisend.html">MultiSend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguides/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguides/production.html">Managing your Safe in Production</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -159,6 +169,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="commands/mgmt.html">Local Safe Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commands/pending.html">Pending Transactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commands/delegates.html">Managing Delegates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/modules.html">Modules</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -166,7 +177,9 @@ data-aria-dark="Switch to auto color mode">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/accounts.html"><code class="docutils literal notranslate"><span class="pre">SafeAccount</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/accounts.html#ape_safe.accounts.SafeContainer"><code class="docutils literal notranslate"><span class="pre">SafeContainer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html"><code class="docutils literal notranslate"><span class="pre">ExecutedTxData</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/cli.html"><code class="docutils literal notranslate"><span class="pre">propose_from_simulation()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html"><code class="docutils literal notranslate"><span class="pre">BaseSafeClient</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.ExecutedTxData"><code class="docutils literal notranslate"><span class="pre">ExecutedTxData</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.MockSafeClient"><code class="docutils literal notranslate"><span class="pre">MockSafeClient</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.OperationType"><code class="docutils literal notranslate"><span class="pre">OperationType</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/client.html#ape_safe.client.SafeClient"><code class="docutils literal notranslate"><span class="pre">SafeClient</span></code></a></li>
@@ -180,9 +193,11 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ApeSafeException"><code class="docutils literal notranslate"><span class="pre">ApeSafeException</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ClientResponseError"><code class="docutils literal notranslate"><span class="pre">ClientResponseError</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ClientUnavailable"><code class="docutils literal notranslate"><span class="pre">ClientUnavailable</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.FeatureNotAvailable"><code class="docutils literal notranslate"><span class="pre">FeatureNotAvailable</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.MulticallException"><code class="docutils literal notranslate"><span class="pre">MulticallException</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.MultisigTransactionNotFoundError"><code class="docutils literal notranslate"><span class="pre">MultisigTransactionNotFoundError</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NoLocalSigners"><code class="docutils literal notranslate"><span class="pre">NoLocalSigners</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NoVersionDetected"><code class="docutils literal notranslate"><span class="pre">NoVersionDetected</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NotASigner"><code class="docutils literal notranslate"><span class="pre">NotASigner</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.NotEnoughSignatures"><code class="docutils literal notranslate"><span class="pre">NotEnoughSignatures</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.SafeClientException"><code class="docutils literal notranslate"><span class="pre">SafeClientException</span></code></a></li>
@@ -191,6 +206,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.ValueRequired"><code class="docutils literal notranslate"><span class="pre">ValueRequired</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/exceptions.html#ape_safe.exceptions.handle_safe_logic_error"><code class="docutils literal notranslate"><span class="pre">handle_safe_logic_error</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/factory.html"><code class="docutils literal notranslate"><span class="pre">SafeFactory</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="methoddocs/multisend.html"><code class="docutils literal notranslate"><span class="pre">MultiSend</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/packages.html"><code class="docutils literal notranslate"><span class="pre">DeploymentAsset</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/packages.html#ape_safe.packages.DeploymentInfo"><code class="docutils literal notranslate"><span class="pre">DeploymentInfo</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="methoddocs/packages.html#ape_safe.packages.DeploymentType"><code class="docutils literal notranslate"><span class="pre">DeploymentType</span></code></a></li>
@@ -239,5 +255,5 @@ data-aria-dark="Switch to auto color mode">
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script data-domain="docs.apeworx.io" defer="defer" src="https://plausible.io/js/script.js"></script>
-      <script src="_static/shibuya.js?v=1d2088d1"></script></body>
+      <script src="_static/shibuya.js?v=c1cf1a6b"></script></body>
 </html>

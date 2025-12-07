@@ -2,8 +2,8 @@
 <html lang="en" data-accent-color="lime" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Safe Management - ape-safe documentation</title><link rel="shortcut icon" href="../_static/favicon.ico"/><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="MultiSend" href="multisend.html" /><link rel="prev" title="Transaction Workflows" href="transactions.html" />
-      <link rel="canonical" href="ape-safe/userguides/safe_management.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Modules - ape-safe documentation</title><link rel="shortcut icon" href="../_static/favicon.ico"/><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Managing your Safe in Production" href="production.html" /><link rel="prev" title="MultiSend" href="multisend.html" />
+      <link rel="canonical" href="ape-safe/userguides/modules.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
@@ -19,8 +19,8 @@
 }
 </style>
     <meta property="og:type" content="website"/>
-  <meta property="og:url" content="ape-safe/userguides/safe_management.html"/>
-  <meta property="og:title" content="Safe Management"/>
+  <meta property="og:url" content="ape-safe/userguides/modules.html"/>
+  <meta property="og:title" content="Modules"/>
     <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
@@ -61,9 +61,9 @@ data-aria-dark="Switch to auto color mode">
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transaction Workflows</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Safe Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="safe_management.html">Safe Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisend.html">MultiSend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="production.html">Managing your Safe in Production</a></li>
 </ul>
 <p class="caption" role="heading" aria-level="3"><span class="caption-text">CLI Reference</span></p>
@@ -124,11 +124,8 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#working-with-safe-contracts">Working with Safe Contracts</a></li>
-<li><a class="reference internal" href="#changing-safe-ownership-and-threshold">Changing Safe Ownership and Threshold</a></li>
-<li><a class="reference internal" href="#safe-modules">Safe Modules</a></li>
-<li><a class="reference internal" href="#safe-guard">Safe Guard</a></li>
-<li><a class="reference internal" href="#understanding-safe-versions">Understanding Safe Versions</a></li>
+<li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -146,7 +143,7 @@ data-aria-dark="Switch to auto color mode">
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Safe Management</strong>
+        <strong itemprop="name">Modules</strong>
         <meta itemprop="position" content="2" />
       </li></ol>
     <div class="xl:hidden ml-1">
@@ -159,99 +156,59 @@ data-aria-dark="Switch to auto color mode">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="safe-management">
-<h1>Safe Management<a class="headerlink" href="#safe-management" title="Link to this heading"></a></h1>
-<p>This guide explains how to modify your Safe configuration programmatically.</p>
-<section id="working-with-safe-contracts">
-<h2>Working with Safe Contracts<a class="headerlink" href="#working-with-safe-contracts" title="Link to this heading"></a></h2>
-<p>You can directly access the underlying Safe protocol smart contract via <code class="docutils literal notranslate"><span class="pre">safe.contract</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Accessible as `safe.signers`</span>
-</span><span data-line="2"><span class="n">owners</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">getOwners</span><span class="p">()</span>
-</span><span data-line="3"><span class="k">assert</span> <span class="n">owners</span> <span class="o">==</span> <span class="n">safe</span><span class="o">.</span><span class="n">signers</span>
-</span><span data-line="4">
-</span><span data-line="5"><span class="c1"># Accessible as `safe.confirmations_required`</span>
-</span><span data-line="6"><span class="n">threshold</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">getThreshold</span><span class="p">()</span>
-</span><span data-line="7"><span class="k">assert</span> <span class="n">threshold</span> <span class="o">==</span> <span class="n">safe</span><span class="o">.</span><span class="n">confirmations_required</span>
-</span></pre></div>
-</div>
-</section>
-<section id="changing-safe-ownership-and-threshold">
-<h2>Changing Safe Ownership and Threshold<a class="headerlink" href="#changing-safe-ownership-and-threshold" title="Link to this heading"></a></h2>
-<p>Using the Safe contract provides methods to modify the Safe’s owner set:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Add a new owner with the current threshold</span>
-</span><span data-line="2"><span class="n">receipt</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">addOwnerWithThreshold</span><span class="p">(</span>
-</span><span data-line="3">    <span class="s2">&quot;0xNewOwnerAddress&quot;</span><span class="p">,</span>
-</span><span data-line="4">    <span class="n">safe</span><span class="o">.</span><span class="n">confirmations_required</span><span class="p">,</span>  <span class="c1"># NOTE: Can also change threshold as the same time</span>
-</span><span data-line="5">    <span class="n">sender</span><span class="o">=</span><span class="n">safe</span>
-</span><span data-line="6"><span class="p">)</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="c1"># Remove an owner</span>
-</span><span data-line="9"><span class="n">prev_owner</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">compute_prev_signer</span><span class="p">(</span><span class="s2">&quot;0xOwnerToRemove&quot;</span><span class="p">)</span>
-</span><span data-line="10"><span class="n">receipt</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">removeOwner</span><span class="p">(</span>
-</span><span data-line="11">    <span class="n">safe</span><span class="o">.</span><span class="n">compute_prev_signer</span><span class="p">(</span><span class="s2">&quot;0xOwnerToRemove&quot;</span><span class="p">),</span>
-</span><span data-line="12">    <span class="s2">&quot;0xOwnerToRemove&quot;</span><span class="p">,</span>
-</span><span data-line="13">    <span class="n">safe</span><span class="o">.</span><span class="n">confirmations_required</span><span class="p">,</span>  <span class="c1"># NOTE: Can also change threshold as the same time</span>
-</span><span data-line="14">    <span class="n">sender</span><span class="o">=</span><span class="n">safe</span>
-</span><span data-line="15"><span class="p">)</span>
-</span><span data-line="16">
-</span><span data-line="17"><span class="c1"># Swap an owner</span>
-</span><span data-line="18"><span class="n">prev_owner</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">compute_prev_signer</span><span class="p">(</span><span class="s2">&quot;0xOldOwner&quot;</span><span class="p">)</span>
-</span><span data-line="19"><span class="n">receipt</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">swapOwner</span><span class="p">(</span>
-</span><span data-line="20">    <span class="n">safe</span><span class="o">.</span><span class="n">compute_prev_signer</span><span class="p">(</span><span class="s2">&quot;0xOwnerToRemove&quot;</span><span class="p">),</span>
-</span><span data-line="21">    <span class="s2">&quot;0xOldOwner&quot;</span><span class="p">,</span>
-</span><span data-line="22">    <span class="s2">&quot;0xNewOwner&quot;</span><span class="p">,</span>
-</span><span data-line="23">    <span class="c1"># NOTE: Cannot modify threshold this way</span>
-</span><span data-line="24">    <span class="n">sender</span><span class="o">=</span><span class="n">safe</span>
-</span><span data-line="25"><span class="p">)</span>
-</span><span data-line="26">
-</span><span data-line="27"><span class="c1"># Change threshold</span>
-</span><span data-line="28"><span class="n">receipt</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">changeThreshold</span><span class="p">(</span>
-</span><span data-line="29">    <span class="n">new_threshold</span><span class="p">,</span>
-</span><span data-line="30">    <span class="n">sender</span><span class="o">=</span><span class="n">safe</span>
-</span><span data-line="31"><span class="p">)</span>
-</span></pre></div>
-</div>
-<p>Note that these are multisig transactions themselves and require the appropriate number of confirmations.</p>
-</section>
-<section id="safe-modules">
-<h2>Safe Modules<a class="headerlink" href="#safe-modules" title="Link to this heading"></a></h2>
-<p>The Safe protocol supports configuring “Modules”, which are contracts that have special capabilities to access your Safe.</p>
-<p>You can enable or disable modules using the Safe contract as followsnot :</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">assert</span> <span class="ow">not</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">isModuleEnabled</span><span class="p">(</span><span class="s2">&quot;0xModule&quot;</span><span class="p">)</span>
-</span><span data-line="2"><span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">enableModule</span><span class="p">(</span><span class="s2">&quot;0xModule&quot;</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">safe</span><span class="p">)</span>
-</span><span data-line="3"><span class="k">assert</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">isModuleEnabled</span><span class="p">(</span><span class="s2">&quot;0xModule&quot;</span><span class="p">)</span>
-</span><span data-line="4"><span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">disableModule</span><span class="p">(</span><span class="s2">&quot;0xModule&quot;</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">safe</span><span class="p">)</span>
-</span><span data-line="5"><span class="k">assert</span> <span class="ow">not</span> <span class="n">safe</span><span class="o">.</span><span class="n">contract</span><span class="o">.</span><span class="n">isModuleEnabled</span><span class="p">(</span><span class="s2">&quot;0xModule&quot;</span><span class="p">)</span>
-</span></pre></div>
-</div>
-<!-- TODO better module support -->
-</section>
-<section id="safe-guard">
-<h2>Safe Guard<a class="headerlink" href="#safe-guard" title="Link to this heading"></a></h2>
-<p>Since version v1.3.0, the Safe protocol supports setting a transaction “Guard”, which is a contract that can disallow certain actions to occur unless conditions are met after a proposed transaction executes.
-To check if your safe has a Guard implemented, you can use the <code class="docutils literal notranslate"><span class="pre">.guard</span></code> property, which will return a contract if the guard is set.</p>
-<p>You can also change or set a guard using the <code class="docutils literal notranslate"><span class="pre">.set_guard</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">assert</span> <span class="ow">not</span> <span class="n">safe</span><span class="o">.</span><span class="n">guard</span>
-</span><span data-line="2"><span class="n">safe</span><span class="o">.</span><span class="n">set_guard</span><span class="p">(</span><span class="s2">&quot;0xMyGuard&quot;</span><span class="p">,</span> <span class="n">submitter</span><span class="o">=</span><span class="n">me</span><span class="p">)</span>
-</span><span data-line="3"><span class="k">assert</span> <span class="n">safe</span><span class="o">.</span><span class="n">guard</span>
-</span></pre></div>
-</div>
+          <section id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h1>
+<p>The modules feature of your Safe account allows you to manage “extensions” to the behavior of your Safe,
+unlocking the ability to support automated actions or custom transaction logic <em>without signer approval</em>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Setting a Guard is a dangerous action.
-Do <em>NOT</em> attempt unless you know what you are doing.
-If a Guard is set improperly, it may render your Safe (and all it’s assets) permanently inaccessible.</p>
+<p>Safe Modules can be very dangerous to enable on your Safe, as it allows the Module
+(and accounts with access to the Module) to completely bypass the authentication logic in your Safe smart contract.
+Use at your own risk.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Read more about Safe Modules in the <a class="reference external" href="https://docs.safe.global/advanced/smart-account-modules">docs</a>.</p>
+</div>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h2>
+<p>To enable or disable a Module in your Safe, you can do so via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">ape</span><span class="w"> </span><span class="kn">import</span> <span class="n">accounts</span>
+</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">ape_safe</span><span class="w"> </span><span class="kn">import</span> <span class="n">multisend</span>
+</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">ape_tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">tokens</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="n">me</span> <span class="o">=</span> <span class="n">accounts</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;my-key&quot;</span><span class="p">)</span>
+</span><span data-line="6"><span class="n">safe</span> <span class="o">=</span> <span class="n">accounts</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;my-safe&quot;</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="n">module</span> <span class="o">=</span> <span class="n">Contract</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># NOTE: Deploy it yourself, or use vetted Safe modules</span>
+</span><span data-line="9">
+</span><span data-line="10"><span class="c1"># Check if module is enabled</span>
+</span><span data-line="11"><span class="k">assert</span> <span class="n">module</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">safe</span><span class="o">.</span><span class="n">modules</span>
+</span><span data-line="12">
+</span><span data-line="13"><span class="c1"># Then add it</span>
+</span><span data-line="14"><span class="n">receipt</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">submitter</span><span class="o">=</span><span class="n">me</span><span class="p">)</span>
+</span><span data-line="15"><span class="k">assert</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">safe</span><span class="o">.</span><span class="n">modules</span>
+</span><span data-line="16">
+</span><span data-line="17"><span class="c1"># You can always disable it later</span>
+</span><span data-line="18"><span class="n">receipt</span> <span class="o">=</span> <span class="n">safe</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">disable</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">submitter</span><span class="o">=</span><span class="n">me</span><span class="p">)</span>
+</span></pre></div>
 </div>
 </section>
-<section id="understanding-safe-versions">
-<h2>Understanding Safe Versions<a class="headerlink" href="#understanding-safe-versions" title="Link to this heading"></a></h2>
-<p>Safe contracts have different versions with varying features. Ape Safe supports all major Safe versions:</p>
-<ul class="simple">
-<li><p>Safe v1.1.1</p></li>
-<li><p>Safe v1.3.0</p></li>
-<li><p>Safe v1.4.1</p></li>
-</ul>
-<p>You can check the version of your Safe by examining the master copy address when listing Safes with the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag.</p>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Link to this heading"></a></h2>
+<p>Safe Modules also come with a Module Guard functionality, similiar to your Safe’s Guard functionality.</p>
+<p>To set (or unset) a Module Guard, do so via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">guard</span> <span class="o">=</span> <span class="n">Contract</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># NOTE: Deploy it yourself, or use a vetted Safe Module Guard</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="k">assert</span> <span class="ow">not</span> <span class="n">safe</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">guard</span>  <span class="c1"># NOTE: Not set by default</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="c1"># Add a Module Guard</span>
+</span><span data-line="6"><span class="n">safe</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">set_guard</span><span class="p">(</span><span class="n">guard</span><span class="p">,</span> <span class="n">submitter</span><span class="o">=</span><span class="n">me</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1"># Remove a Module Guard</span>
+</span><span data-line="9"><span class="n">safe</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">remove_guard</span><span class="p">(</span><span class="n">submitter</span><span class="o">=</span><span class="n">me</span><span class="p">)</span>
+</span></pre></div>
+</div>
 </section>
 </section>
 
@@ -261,16 +218,16 @@ If a Guard is set improperly, it may render your Safe (and all it’s assets) pe
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="transactions.html">
+    <a href="multisend.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span><div class="title">Transaction Workflows</div></div>
+        <span>Previous</span><div class="title">MultiSend</div></div>
     </a>
   </div><div class="navigation-next">
-    <a href="multisend.html">
+    <a href="production.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">MultiSend</div>
+        <div class="title">Managing your Safe in Production</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

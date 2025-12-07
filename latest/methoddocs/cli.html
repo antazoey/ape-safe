@@ -2,8 +2,8 @@
 <html lang="en" data-accent-color="lime" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>&lt;no title&gt; - ape-safe documentation</title><link rel="shortcut icon" href="../_static/favicon.ico"/><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="&lt;no title&gt;" href="types.html" /><link rel="prev" title="&lt;no title&gt;" href="multisend.html" />
-      <link rel="canonical" href="ape-safe/methoddocs/packages.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>&lt;no title&gt; - ape-safe documentation</title><link rel="shortcut icon" href="../_static/favicon.ico"/><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="&lt;no title&gt;" href="client.html" /><link rel="prev" title="&lt;no title&gt;" href="accounts.html" />
+      <link rel="canonical" href="ape-safe/methoddocs/cli.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
@@ -19,7 +19,7 @@
 }
 </style>
     <meta property="og:type" content="website"/>
-  <meta property="og:url" content="ape-safe/methoddocs/packages.html"/>
+  <meta property="og:url" content="ape-safe/methoddocs/cli.html"/>
   <meta property="og:title" content="&lt;no title&gt;"/>
     <meta name="twitter:card" content="summary"/>
   </head>
@@ -77,7 +77,7 @@ data-aria-dark="Switch to auto color mode">
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="accounts.html"><code class="docutils literal notranslate"><span class="pre">SafeAccount</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.html#ape_safe.accounts.SafeContainer"><code class="docutils literal notranslate"><span class="pre">SafeContainer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html"><code class="docutils literal notranslate"><span class="pre">propose_from_simulation()</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">propose_from_simulation()</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="client.html"><code class="docutils literal notranslate"><span class="pre">BaseSafeClient</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="client.html#ape_safe.client.ExecutedTxData"><code class="docutils literal notranslate"><span class="pre">ExecutedTxData</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="client.html#ape_safe.client.MockSafeClient"><code class="docutils literal notranslate"><span class="pre">MockSafeClient</span></code></a></li>
@@ -107,10 +107,10 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html#ape_safe.exceptions.handle_safe_logic_error"><code class="docutils literal notranslate"><span class="pre">handle_safe_logic_error</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="factory.html"><code class="docutils literal notranslate"><span class="pre">SafeFactory</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisend.html"><code class="docutils literal notranslate"><span class="pre">MultiSend</span></code></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">DeploymentAsset</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ape_safe.packages.DeploymentInfo"><code class="docutils literal notranslate"><span class="pre">DeploymentInfo</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ape_safe.packages.DeploymentType"><code class="docutils literal notranslate"><span class="pre">DeploymentType</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ape_safe.packages.PackageType"><code class="docutils literal notranslate"><span class="pre">PackageType</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html"><code class="docutils literal notranslate"><span class="pre">DeploymentAsset</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html#ape_safe.packages.DeploymentInfo"><code class="docutils literal notranslate"><span class="pre">DeploymentInfo</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html#ape_safe.packages.DeploymentType"><code class="docutils literal notranslate"><span class="pre">DeploymentType</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html#ape_safe.packages.PackageType"><code class="docutils literal notranslate"><span class="pre">PackageType</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="types.html"><code class="docutils literal notranslate"><span class="pre">SafeCacheData</span></code></a></li>
 </ul>
 
@@ -123,13 +123,7 @@ data-aria-dark="Switch to auto color mode">
     <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
       <i class="i-lucide close"></i>
     </button>
-    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">DeploymentAsset</span></code></a></li>
-<li><a class="reference internal" href="#ape_safe.packages.DeploymentInfo"><code class="docutils literal notranslate"><span class="pre">DeploymentInfo</span></code></a></li>
-<li><a class="reference internal" href="#ape_safe.packages.DeploymentType"><code class="docutils literal notranslate"><span class="pre">DeploymentType</span></code></a></li>
-<li><a class="reference internal" href="#ape_safe.packages.PackageType"><code class="docutils literal notranslate"><span class="pre">PackageType</span></code></a></li>
-</ul>
-</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
   <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
   <main class="sy-main w-full max-sm:max-w-full print:pt-6">
@@ -158,26 +152,36 @@ data-aria-dark="Switch to auto color mode">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <dl class="py class" id="module-ape_safe.packages">
-<dt class="sig sig-object py" id="ape_safe.packages.DeploymentAsset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ape_safe.packages.</span></span><span class="sig-name descname"><span class="pre">DeploymentAsset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">released</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contractName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deployments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#ape_safe.packages.DeploymentType" title="ape_safe.packages.DeploymentType"><span class="pre">DeploymentType</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#ape_safe.packages.DeploymentInfo" title="ape_safe.packages.DeploymentInfo"><span class="pre">DeploymentInfo</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">networkAddresses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#ape_safe.packages.DeploymentType" title="ape_safe.packages.DeploymentType"><span class="pre">DeploymentType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#ape_safe.packages.DeploymentType" title="ape_safe.packages.DeploymentType"><span class="pre">DeploymentType</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ape_safe.packages.DeploymentAsset" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="ape_safe.packages.DeploymentInfo">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ape_safe.packages.</span></span><span class="sig-name descname"><span class="pre">DeploymentInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codeHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ape_safe.packages.DeploymentInfo" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="ape_safe.packages.DeploymentType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ape_safe.packages.</span></span><span class="sig-name descname"><span class="pre">DeploymentType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ape_safe.packages.DeploymentType" title="Link to this definition"></a></dt>
-<dd><p>An enumeration.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="ape_safe.packages.PackageType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ape_safe.packages.</span></span><span class="sig-name descname"><span class="pre">PackageType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ape_safe.packages.PackageType" title="Link to this definition"></a></dt>
-<dd><p>An enumeration.</p>
+          <dl class="py function" id="module-ape_safe.cli">
+<dt class="sig sig-object py" id="ape_safe.cli.propose_from_simulation">
+<span class="sig-prename descclassname"><span class="pre">ape_safe.cli.</span></span><span class="sig-name descname"><span class="pre">propose_from_simulation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ape_safe.cli.propose_from_simulation" title="Link to this definition"></a></dt>
+<dd><p>Create and propose a new SafeTx from transaction receipts inside a fork.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nd">@propose_from_simulation</span><span class="p">()</span>
+</span><span data-line="2"><span class="c1"># NOTE: Name of decorated function *must* be called `cli`</span>
+</span><span data-line="3"><span class="c1"># NOTE: Decorated function may have `safe` or `submitter` args in it</span>
+</span><span data-line="4"><span class="k">def</span><span class="w"> </span><span class="nf">cli</span><span class="p">():</span>
+</span><span data-line="5">    <span class="c1"># This entire function is executed within a fork/isolated context</span>
+</span><span data-line="6">    <span class="c1"># Use normal Ape features</span>
+</span><span data-line="7">    <span class="n">my_contract</span> <span class="o">=</span> <span class="n">Contract</span><span class="p">(</span><span class="s2">&quot;&lt;address&gt;&quot;</span><span class="p">)</span>
+</span><span data-line="8">
+</span><span data-line="9">    <span class="c1"># Any transaction is performed as if `sender=safe.address`</span>
+</span><span data-line="10">    <span class="n">my_contract</span><span class="o">.</span><span class="n">mutableMethod</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span data-line="11">
+</span><span data-line="12">    <span class="c1"># You can make assertions that will cause your simulation to fail if tripped</span>
+</span><span data-line="13">    <span class="k">assert</span> <span class="n">my_contract</span><span class="o">.</span><span class="n">viewMethod</span><span class="p">()</span> <span class="o">==</span> <span class="o">...</span>
+</span><span data-line="14">
+</span><span data-line="15">    <span class="c1"># You can also add conditional calls</span>
+</span><span data-line="16">    <span class="k">if</span> <span class="n">my_contract</span><span class="o">.</span><span class="n">viewMethod</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">some_number</span><span class="p">:</span>
+</span><span data-line="17">        <span class="n">my_contract</span><span class="o">.</span><span class="n">mutableMethod</span><span class="p">()</span>
+</span><span data-line="18">
+</span><span data-line="19">    <span class="c1"># Once you are done with your transactions, the simulation will complete after exiting</span>
+</span><span data-line="20">
+</span><span data-line="21">
+</span><span data-line="22"><span class="c1"># Once the simulation is complete, the decorator will collect all receipts it finds</span>
+</span><span data-line="23"><span class="c1"># from the `safe` and collect them into a single SafeTx to propose to a public network</span>
+</span></pre></div>
+</div>
 </dd></dl>
 
 
@@ -187,13 +191,13 @@ data-aria-dark="Switch to auto color mode">
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="multisend.html">
+    <a href="accounts.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
         <span>Previous</span><div class="title">&lt;no title&gt;</div></div>
     </a>
   </div><div class="navigation-next">
-    <a href="types.html">
+    <a href="client.html">
       <div class="page-info">
         <span>Next</span>
         <div class="title">&lt;no title&gt;</div>
